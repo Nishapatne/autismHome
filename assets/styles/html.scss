@@ -1,0 +1,65 @@
+
+@import "assets/styles/variables";
+
+html,body{
+    overflow-x: hidden;
+    font-family: $SFProRounded;
+}
+body {
+  color: $color-main;
+  margin: auto;
+  background: #fff;
+  @media (max-width: 768px){
+      width:auto;
+  }
+}
+
+strong {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 39px;
+  line-height: normal;
+  text-align: left;
+  font-weight:600;
+  color: $color-main;
+}
+h2 {
+  font-size: 32px;
+  line-height: normal;
+  text-align: left;
+  font-weight:600;
+  color: $color-main;
+}
+
+h3{
+  font-size: 24px;
+  line-height: normal;
+  text-align: left;
+  font-weight:600;
+  color: $color-main;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family:$SFProRounded;
+    
+}
+p{
+  color: $color-main;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size:16px;
+  line-height:1.56;
+  font-family:$SFProRounded;
+}
+
+
+a{
+  color:$color-orange;
+  transition:.3s ease-in;
+  text-decoration: none;
+  &:hover{
+  color:$color-lightGreen;
+  }
+}

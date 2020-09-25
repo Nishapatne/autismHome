@@ -1,0 +1,28 @@
+before_script:
+  # - ....
+  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+  - mkdir -p ~/.ssh
+  - eval $(ssh-agent -s)
+  - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+
+deploy_stage:
+  stage:        deploy
+  environment:  Staging
+  only:
+    - develop
+    - feature/wip
+  script:
+    - ssh-add <(echo "$STAGING_PRIVATE_KEY")
+    - ssh -p22 sodainmind@167.99.67.228 "cd /var/www/extra/demos/stage_mapletreeart_html/mapletree-arts-html && git fetch && git checkout -f origin/$CI_COMMIT_REF_NAME"
+    - ssh -p22 sodainmind@167.99.67.228 "cd /var/www/extra/demos/stage_mapletreeart_html/mapletree-arts-html && npm rebuild node-sass && gulp build"
+    
+deploy_production:
+  stage:        deploy
+  environment:  Production
+  only:
+    - master
+  script:
+    - ssh-add <(echo "$STAGING_PRIVATE_KEY")
+    - ssh -p22 sodainmind@167.99.67.228 "cd /var/www/extra/demos/stage_mapletreeart_html/mapletree-arts-html && git fetch && git checkout -f origin/$CI_COMMIT_REF_NAME"
+    - ssh -p22 sodainmind@167.99.67.228 "cd /var/www/extra/demos/stage_mapletreeart_html/mapletree-arts-html && npm rebuild node-sass &&  gulp build"
+  when:                 manual

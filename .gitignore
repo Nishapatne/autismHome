@@ -1,0 +1,5 @@
+node_modules
+bower_components
+**/*.lock
+assets/dist/
+assets/styles/icons.scss

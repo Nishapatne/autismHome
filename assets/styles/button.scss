@@ -1,0 +1,70 @@
+@import "assets/styles/variables";
+
+button,
+.btn{
+	   border-radius: 8px;
+  	background-color: rgba(180, 180, 180, 0.1);
+  	color:$color-orange;
+  	font-size: 20px;
+  	padding: 10px 30px;
+  	font-family: $Lato-heavy;
+  	text-align: center;
+  	cursor: pointer;
+  	line-height: normal;
+  	width:auto;
+  	min-width: 400px;
+  	margin:auto;
+  	 @include max-screen($sm){
+            max-width:100%;
+            font-size:16px;
+            min-width:auto;
+            display:block;
+     }
+}
+.btn-orange{
+  border: solid 1px #f86700;
+  background-color: #ffffff !important;
+  color:#f86700;
+  font-size: 18px;
+  border-radius: 30px;
+  padding:10px 16px;
+  transition: 0.4s all;
+  cursor:pointer;
+  outline: none;  
+  
+  &:hover,&:active,&:focus{
+    box-shadow: 0 11px 33px -13px rgba(0, 0, 0, 0.62);
+    background-color: white !important;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+  }
+}
+.read-more-btn{
+  position: fixed;
+  left:0;
+  right:0;
+  text-align:center;
+  transition: 0.4s all;
+  top:85%;
+  display: none;
+ /* &.hidden{
+    display: none;
+  }*/
+
+}
+
+.feature{
+   /*overflow:auto;*/
+}
+
+.main-block{
+  // height: 100vh;
+  max-height: 7162px;
+  max-width: 1920px;
+  position: relative;
+  overflow: auto;
+}
+
+ 
+  // height: 7162px;
+  

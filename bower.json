@@ -1,0 +1,8 @@
+{
+  "name": "mappletree",
+  "version": "1.0",
+  "dependencies": {
+    "bootstrap-grid-only": "^1.0.0",
+    "sass-mediaqueries": "^1.6.1"
+  }
+}
